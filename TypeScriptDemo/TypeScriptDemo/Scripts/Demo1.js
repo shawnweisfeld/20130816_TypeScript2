@@ -1,21 +1,15 @@
-var Sayings;
-(function (Sayings) {
-    var Greeter = (function () {
-        function Greeter(greeting) {
-            this.greeting = greeting;
-        }
-        Greeter.prototype.greet = function () {
-            return "Hello, " + this.greeting;
-        };
-        return Greeter;
-    })();
-    Sayings.Greeter = Greeter;
-})(Sayings || (Sayings = {}));
+function Greeter(greeting) {
+    this.greeting = greeting;
+}
 
-var greeter = new Sayings.Greeter("module fun!");
+Greeter.prototype.greet = function () {
+    return "Hello, " + this.greeting;
+};
+
+var greeter = new Greeter({ message: "world" });
 
 var button = document.getElementById('btn');
 button.onclick = function () {
     alert(greeter.greet());
 };
-//@ sourceMappingURL=Demo1.js.map
+//# sourceMappingURL=Demo1.js.map
